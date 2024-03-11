@@ -5,14 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>emailer</title>  
     <link rel="stylesheet" href="css/bootstrap.css">
-    <style>
-        [class*="col"]{
-            padding: 1rem;
-            background-color: blue;
-            border: 2px solid white;
-            color: white;
-        }
-    </style>
+    
 </head>
 <body>
     <script src="js/bootstrap.js"> </script>
