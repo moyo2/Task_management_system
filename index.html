@@ -3,17 +3,44 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <link rel="stylesheet" href="./css/bootstrap.css">
+    <title>BoostedEmailer</title>
 </head>
 <body>
+    <!-- <div class="b-example-divider"></div>
+
+    <div class="container">
+      <header class="d-flex justify-content-center py-3">
+        <ul class="nav nav-pills">
+          <li class="nav-item"><a href="#" class="nav-link active" aria-current="page">Home</a></li>
+          <li class="nav-item"><a href="#" class="nav-link">Features</a></li>
+          <li class="nav-item"><a href="#" class="nav-link">Pricing</a></li>
+          <li class="nav-item"><a href="#" class="nav-link">FAQs</a></li>
+          <li class="nav-item"><a href="#" class="nav-link">About</a></li>
+        </ul>
+      </header>
+    </div>
+  
+    <div class="b-example-divider"></div> -->
+  
+
+
+    <div class="container">
+        <div class="container-fluid">
     <h1>Subscribe To Our Amusing Newsletter!</h1>
     <form action="email.php" method="post">
-<input required type="text" name="name" placeholder="Name" autocomplete="off"><br/>
-<input  required type="email" name="email" placeholder="Email" autocomplete="off"><br/>
+        <div class="mb-3 col-4 ">
+            <label class="form-label"  for="name">Name</label>
+<input   class="form-control"  required type="text" name="name" placeholder="Name" autocomplete="off"><br/>
+<label  class="form-label" for="email">Email</label>
+<input  class="form-control"  required type="email" name="email" placeholder="Email" autocomplete="off"><br/>
+        </div> 
 
-
-<button type="submit">Subscribe</button>
-
+<button type="submit" class="btn btn-primary" >Subscribe</button>
     </form>
+
+</div>                     
+</div>
+    <link rel="stylesheet" href="./js/bootstrap.js">
 </body>
 </html>
