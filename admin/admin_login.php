@@ -1,3 +1,28 @@
+<?php 
+
+include_once ('../includes/connection.php');
+
+if(isset($_POST['adminLogin'])){
+    $query = "SELECT email, password, name FROM admin WHERE email = '$_POST[email]' AND password ='$_POST[password]'";
+    $query_run = mysqli_query($connection, $query);
+    if(mysqli_num_rows($query_run)){
+        echo "<script type='text/javascript'>
+       
+        window.location.href = 'admin_dashboard.php';
+        </script>";
+    }
+    else{
+        echo "<script type='text/javascript'>
+        alert('please enter correct details');
+        window.location.href = 'admin_login.php';
+        </script>";
+    }
+}
+
+?> 
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -42,14 +67,14 @@
 <div class="container admin-login-container">
     <div class="card admin-login-card">
         <h2 class="text-center">Admin Login</h2>
-        <form>
+        <form action="admin_login.php" method="post">
             <div class="form-group">
-                <input type="email" class="form-control" placeholder="Email" required>
+                <input type="email" class="form-control"  name= "email"  placeholder="Email" required>
             </div>
             <div class="form-group">
-                <input type="password" class="form-control" placeholder="Password" required>
+                <input type="password" class="form-control" name= "password"  placeholder="Password" required>
             </div>
-            <button type="submit" class="btn btn-primary">Login</button>
+            <button type="submit" class="btn btn-primary" name="adminLogin">Login</button>
         </form>
     </div>
 </div>

@@ -1,4 +1,29 @@
 
+<?php 
+
+include_once ('includes/connection.php');
+
+if(isset($_POST['userLogin'])){
+    $query = "SELECT email, password, name, uid FROM users WHERE email = '$_POST[email]' AND password ='$_POST[password]'";
+    $query_run = mysqli_query($connection, $query);
+    if(mysqli_num_rows($query_run)){
+        echo "<script type='text/javascript'>
+        alert('please enter correct details');
+        window.location.href = 'user_dashboard.php';
+        </script>";
+    }
+    else{
+        echo "<script type='text/javascript'>
+        alert('please enter correct details');
+        window.location.href = 'user_login.php';
+        </script>";
+    }
+}
+
+?> 
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -43,14 +68,14 @@
 <div class="container login-container">
     <div class="card login-card">
         <h2 class="text-center">Login</h2>
-        <form>
+        <form action="user_login.php" method="post">
             <div class="form-group">
-                <input type="email" class="form-control" placeholder="Email" required>
+                <input type="email" class="form-control" name ="email" placeholder="Email" required>
             </div>
             <div class="form-group">
-                <input type="password" class="form-control" placeholder="Password" required>
+                <input type="password" class="form-control" name= "password" placeholder="Password" required>
             </div>
-            <button type="submit" class="btn btn-primary">Login</button>
+            <button type="submit" class="btn btn-primary" name="userLogin">Login</button>
         </form>
     </div>
 </div>
