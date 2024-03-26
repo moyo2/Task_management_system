@@ -88,10 +88,10 @@
       <div class="sidebar">
         <h3>Menu</h3>
         <ul>
-          <li><a href="#">Dashboard</a></li>
-          <li><a href="#">Update Task</a></li>
-          <li><a href="#">Apply Leave</a></li>
-          <li><a href="#">Leave Status</a></li>
+          <li><a href="user_dashboard.php">Dashboard</a></li>
+          <li><a href="update_task.php">Update Task</a></li>
+          <li><a href="apply_leave.php">Apply Leave</a></li>
+          <li><a href="leave_status.php">Leave Status</a></li>
           <li><a href="#">Logout</a></li>
         </ul>
       </div>
