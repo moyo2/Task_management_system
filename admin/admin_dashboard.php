@@ -76,7 +76,8 @@
 <!-- jQuery code -->
 <script type="text/javascript">
     $(document).ready(function(){
-        $("#create_task").click(function(){
+        $("#create_task").click(function(event){
+            event.preventDefault();
             $("#right_sidebar").load("create_task.php"); 
         })
         });
