@@ -92,7 +92,7 @@
           <li><a href="update_task.php">Update Task</a></li>
           <li><a href="apply_leave.php">Apply Leave</a></li>
           <li><a href="leave_status.php">Leave Status</a></li>
-          <li><a href="#">Logout</a></li>
+          <li><a href="logout.php">Logout</a></li>
         </ul>
       </div>
     </div>

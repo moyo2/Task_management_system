@@ -8,9 +8,10 @@
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
 </head>
 <body>
+<div class="container-sm">
 <div class="container mt-5">
     <h2>Create Task</h2>
-    <form id="createTaskForm" action="create_task.php" method="POST">
+    <form  action="admin_dashboard.php" method="POST">
         <div class="form-group">
             <label for="taskName">Task Name:</label>
             <input type="text" class="form-control" id="taskName" name="taskName" required>
@@ -20,6 +21,17 @@
             <label for="taskDescription">Task Description:</label>
             <textarea class="form-control" id="taskDescription" name="taskDescription" rows="4" cols="50"></textarea>
         </div>
+        <div class="form-group">
+            <label for="start_date">Start</label>
+                <input type="date" class="form-control" name="start_date" placeholder="Start Date:" >
+        </div>
+        <div class="form-group">
+            <label for="start_date">End Date </label>
+                <input type="date" class="form-control" name="end_date"  placeholder="End Date:" >
+           
+        </div>
+
+
 
         <div class="form-group">
             <label for="assignedUser">Assign To:</label>
@@ -39,8 +51,10 @@
             </select>
         </div> 
 
-        <button type="submit" class="btn btn-primary">Create Task</button>
+        <button type="submit" class="btn btn-primary" name="create_task" value= "Create_task">Create Task</button>
     </form>
+</div>
+
 </div>
 
 

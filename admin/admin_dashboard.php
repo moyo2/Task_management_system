@@ -1,3 +1,38 @@
+<?php
+include_once('../includes/connection.php');
+
+if(isset($_POST['create_task'])){
+    $taskName = mysqli_real_escape_string($connection, $_POST['taskName']);
+    $taskDescription = mysqli_real_escape_string($connection, $_POST['taskDescription']);
+    $start_date = mysqli_real_escape_string($connection, $_POST['start_date']);
+    $end_date = mysqli_real_escape_string($connection, $_POST['end_date']);
+
+    $query = "INSERT INTO task VALUES (null, '$taskName', '$taskDescription', '$start_date', '$end_date', 'Not started')";
+    $query_run = mysqli_query($connection, $query);
+
+    if($query_run){
+        echo "<script type='text/javascript'>
+        alert('Task created successfully');
+        window.location.href ='admin_dashboard.php';
+        </script>";
+    }
+    else{
+        echo "<script type='text/javascript'>
+        alert('Task not created. Please try again.');
+        window.location.href ='create_task.php';
+        </script>";
+    }
+}
+?>
+
+
+
+
+
+
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -110,7 +145,7 @@
           <li><a href="create_task.php"  id="create_task"     type="button" class="link">Create Task</a></li>
           <li><a href="manage_task.php"  id="manage_task"   type="button" class="link">Manage Task</a></li>
           <li><a href="leave_application.php"  id="leave_application"  type="button" class="link" >Leave Applictions</a></li>
-          <li><a href="#">Logout</a></li>
+          <li><a href="../logout.php">Logout</a></li>
         </ul>
       </div>
     </div>
