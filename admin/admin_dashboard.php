@@ -109,6 +109,7 @@ if(isset($_POST['create_task'])){
   </style>
 
 <!-- jQuery code -->
+<!-- create task sidbar function -->
 <script type="text/javascript">
     $(document).ready(function(){
         $("#create_task").click(function(event){
@@ -117,6 +118,33 @@ if(isset($_POST['create_task'])){
         })
         });
 </script>
+
+<!-- manage task sidebar function -->
+
+<script type="text/javascript">
+    $(document).ready(function(){
+        $("#manage_task").click(function(event){
+            event.preventDefault(event);
+            $("#right_sidebar").load("manage_task.php"); 
+        })
+        });
+</script>
+
+<!-- Leave application sidebar function -->
+
+<script type="text/javascript">
+    $(document).ready(function(){
+        $("#leave_application").click(function(event){
+            event.preventDefault(event);
+            $("#right_sidebar").load("leave_application.php"); 
+        })
+        });
+</script>
+
+
+
+
+
 
 
 </head>
