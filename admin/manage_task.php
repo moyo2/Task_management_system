@@ -27,7 +27,8 @@ while($row = mysqli_fetch_assoc($query_run)){
         <td><?php echo $row['start_date'] ?></td>
         <td><?php echo $row['end_date'] ?></td>
         <td><?php echo $row['status'] ?></td>
-      <td> <a href="edit_task.php?id=<?php ?>">Edit</a> |<a href="edit_task.ph?id=<?php ?>">Delete</a> </td>
+      
+      <td> <a href="edit_task.php?id=<?php echo $row['tid']; ?>">Edit</a> </br> <a href="delete_task.php?id=<?php echo $row['tid']; ?>">Delete</a></td>
         </tr>
         <?php 
        

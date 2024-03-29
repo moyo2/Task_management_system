@@ -1,0 +1,65 @@
+
+/* Custom Styles */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f8f9fa;
+    margin: 4px;
+    padding: 0;
+  }
+  .sidebar {
+    background-color: #343a40;
+    padding: 20px;
+    color: #fff;
+    height: 100%;
+    text-align: left;
+  }
+  .sidebar h3 {
+    margin-bottom: 40px;
+    text-align: center;
+  }
+  .sidebar ul li {
+    list-style-type: none;
+    margin-bottom: 10px;
+    
+  }
+  .dashboard-header {
+    background-color: #007bff;
+    color: #fff;
+    padding: 20px;
+    text-align: left;
+    height: 20vh;
+    border-bottom-right-radius: 10px;
+    border-top-right-radius: 10px;
+    border-top-left-radius: 10px;
+    position: relative;
+  }
+
+
+  a{
+      text-decoration:none;
+  }
+
+  .p_header{
+    background-color: #007bff;
+    color: #fff;
+    margin: 0;
+    padding: 0;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    text-align: center;
+    width: 20%;
+  }
+
+  .dashboard-content {
+    margin-top: 20px;
+    height: 50vh;
+  }
+  .card-table {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    height: 35%;
+    text-align: center;
+  }

@@ -38,7 +38,7 @@ include_once "includes/connection.php";
             position: absolute;
             top: 0;
             left: 0;
-            z-index: 1; /* Ensure the overlay is above the background */
+            z-index: 1; 
         }
 
         .landing-container {
@@ -69,7 +69,7 @@ include_once "includes/connection.php";
 
         .footer a {
             color: #fff;
-            text-decoration: none;
+            /* text-decoration: none; */
             margin: 0 10px;
         }
     </style>
@@ -86,11 +86,15 @@ include_once "includes/connection.php";
     </div>
 </div>
 
-<footer class="footer">
+<!-- <footer class="footer">
     <div class="container">
-        <a href="#" style="color: #fff;">About Us</a>
-        <a href="#" style="color: #fff;">Contact Us</a>
-        <a href="#" style="color: #fff;">Terms of Service</a>
-        <a href="#" style="color: #fff;">Privacy Policy</a>
+        <a href="about_us.php" style="color: #fff; pointer-events: auto;"><button  class="btn btn-primary">About Us</button></a>
+        <a href="contact_us.php" style="color: #fff; pointer-events: auto;">Contact Us</a>
+        <a href="term_of_service.php" style="color: #fff; pointer-events: auto;">Terms of Service</a>
+        <a href="privacy_policy.php" style="color: #fff; pointer-events: auto;">Privacy Policy</a>
     </div>
-</footer>
+</footer> -->
+
+</body>
+</html>
+
