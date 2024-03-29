@@ -3,7 +3,7 @@
 include_once ('includes/connection.php');
 
 if(isset($_POST['userRegistration'])){
-    $query = " INSERT INTO users VALUES(null,'$_POST[name]', '$_POST[email]', '$_POST[password]')";
+    $query = " INSERT INTO users VALUES(null, '$_POST[name]', '$_POST[email]', '$_POST[password]')";
     $query_run = mysqli_query($connection, $query);
     if($query_run){
         echo "<script type='text/javascript'>
@@ -68,18 +68,18 @@ if(isset($_POST['userRegistration'])){
     <div class="card register-card">
         <h2 class="text-center">Register</h2>
         <!-- Registration Form -->
-        <form action="register.php" method="post"> <!-- Assuming register.php is the file where you'll handle form submission -->
+        <form action="register.php" method="post"> 
             <!-- Full Name Input -->
             <div class="form-group">
-                <input type="text" class="form-control" placeholder="Full Name" name="name" required> <!-- Added name attribute -->
+                <input type="text" class="form-control" placeholder="Full Name" name="name" required> 
             </div>
             <!-- Email Input -->
             <div class="form-group">
-                <input type="email" class="form-control" placeholder="Email" name="email" required> <!-- Added name attribute -->
+                <input type="email" class="form-control" placeholder="Email" name="email" required> 
             </div>
             <!-- Password Input -->
             <div class="form-group">
-                <input type="password" class="form-control" placeholder="Password" name="password" required> <!-- Added name attribute -->
+                <input type="password" class="form-control" placeholder="Password" name="password" required> 
             </div>
            
             <!-- Register Button -->
