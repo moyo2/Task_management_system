@@ -43,7 +43,7 @@
                 if (mysqli_num_rows($query_run)) {
                     while ($row = mysqli_fetch_assoc($query_run)) {
                 ?>
-                        <option value="<?php echo $row['uid']; ?>"><?php echo $row['name']; ?></option>
+                        <option value="<?php echo $row['name']; ?>"><?php echo $row['name']; ?></option>
                 <?php
                     }
                 }

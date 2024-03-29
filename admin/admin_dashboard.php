@@ -2,12 +2,13 @@
 include_once('../includes/connection.php');
 
 if(isset($_POST['create_task'])){
+    $assignedUser = mysqli_real_escape_string($connection, $_POST['assignedUser']);
     $taskName = mysqli_real_escape_string($connection, $_POST['taskName']);
     $taskDescription = mysqli_real_escape_string($connection, $_POST['taskDescription']);
     $start_date = mysqli_real_escape_string($connection, $_POST['start_date']);
     $end_date = mysqli_real_escape_string($connection, $_POST['end_date']);
 
-    $query = "INSERT INTO task VALUES (null, '$taskName', '$taskDescription', '$start_date', '$end_date', 'Not started')";
+    $query = "INSERT INTO task VALUES (null, '$taskName','$assignedUser', '$taskDescription', '$start_date', '$end_date','Not started '  )";
     $query_run = mysqli_query($connection, $query);
 
     if($query_run){
