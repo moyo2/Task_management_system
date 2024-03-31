@@ -1,12 +1,22 @@
-
+<?php include_once ('includes/connection.php');?>
 <?php 
+SESSION_START()
 
-include_once ('includes/connection.php');
-
+?>
+<?php
 if(isset($_POST['userLogin'])){
-    $query = "SELECT email, password, name, uid FROM users WHERE email = '$_POST[email]' AND password ='$_POST[password]'";
+    $query = "SELECT email, password, name, id FROM users WHERE email = '$_POST[email]' AND password ='$_POST[password]'";
     $query_run = mysqli_query($connection, $query);
     if(mysqli_num_rows($query_run)){
+
+        while($row = mysqli_fetch_assoc($query_run)){
+                $_SESSION['email'] = $row['email'];
+                $_SESSION['name'] = $row['name'];
+                $_SESSION['id'] = $row['id'];
+        }
+        
+
+        
         echo "<script type='text/javascript'>
         alert('please enter correct details');
         window.location.href = 'user_dashboard.php';

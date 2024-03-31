@@ -1,3 +1,11 @@
+<?php session_start();
+?>
+<?php
+include_once('./includes/connection.php');
+?>
+
+
+
 
 <!DOCTYPE html>
 <html lang="en">
@@ -130,8 +138,8 @@
       <div class="dashboard-header">
         <h1>TaskVibe</h1>
         <div class="p_header"> 
-          <p>User Name</p>
-          <p> user@example.com</p>
+        <p><?php   echo "Hello" ." ".$_SESSION['name'] ; ?></p>
+          <p> <?php   echo $_SESSION['email'] ; ?></p>
         </div>
       </div>
     </div>

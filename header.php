@@ -11,11 +11,3 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
 <!-- External css -->
     <link rel="stylesheet" href="./css/styles.css">
-
-</head>
-    <style>
-        body {
-            background-color: #f8f9fa;
-        }
-    </style>
-</head>
