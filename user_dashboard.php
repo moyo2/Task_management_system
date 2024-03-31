@@ -5,7 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>User Dashboard</title>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-  <style>
+  <link rel="stylesheet" href="../includes/styles.css">
+ <style>
     /* Custom Styles */
     body {
       font-family: Arial, sans-serif;

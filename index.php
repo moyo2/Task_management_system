@@ -12,6 +12,7 @@ include_once "includes/connection.php";
     <title>TaskVibes</title>
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../includes/styles.css">
     <style>
         body {
             background-image: url('./images/bg.png');
