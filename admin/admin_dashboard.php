@@ -115,12 +115,27 @@ if(isset($_POST['create_task'])){
         <div class="card card-table">
           <!-- table content  -->
           <h2>Welcome to TaskVibe Dashboard</h2>
+
           
+          <!-- <?php 
+          // if(isset($_GET['update_msg'])){
+          //   echo "<h6>".$_GET['update_msg']."</h6>";
+          // }
+          ?>
+
+      <?php 
+          // if(isset($_GET['update_msg'])){
+          //   echo "<h6>".$_GET['update_msg']."</h6>";
+          // }
+          ?> -->
         </div>
       </div>
     </div>
   </div>
 </div>
+
+
+
 
 </body>
 </html>

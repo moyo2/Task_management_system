@@ -1,12 +1,21 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    <h3>delete</h3>
-    
-</body>
-</html>
+
+<?php
+if(isset($_GET['id'])){
+    $id = $_GET['id'];
+
+    // Corrected SQL query with backticks
+    $query = "DELETE FROM `task` WHERE `id` = '$id'";
+
+    $query_run = mysqli_query($connection, $query);
+
+    // Checking if the query was successful 
+    if(!$query_run){
+        die ("Query failed: " . mysqli_error($connection));
+    }
+    else{
+        header('LOCATION: admin_dashboard.php?delete_msg=You have successfully deleted the task');
+        exit; // exit to stop further execution
+    }
+}
+?>
+
