@@ -1,11 +1,15 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>User Dashboard</title>
+  <title>Admin Dashboard</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
   <link rel="stylesheet" href="../includes/styles.css">
+
+
  <style>
     /* Custom Styles */
     body {
@@ -67,6 +71,55 @@
       text-align: center;
     }
   </style>
+
+<!-- jQuery code -->
+<!-- create task sidbar function -->
+<script type="text/javascript">
+    $(document).ready(function(){
+        $("#create_task").click(function(event){
+            event.preventDefault(event);
+            $("#right_sidebar").load("create_task.php"); 
+        })
+        });
+</script>
+
+<!-- leave status sidebar function -->
+
+<script type="text/javascript">
+    $(document).ready(function(){
+        $("#leave_status").click(function(event){
+            event.preventDefault(event);
+            $("#right_sidebar").load("leave_status.php"); 
+        })
+        });
+</script>
+
+
+<!-- update task sidebar function -->
+<script type="text/javascript">
+    $(document).ready(function(){
+        $("#update_task").click(function(event){
+            event.preventDefault(event);
+            $("#right_sidebar").load("task.php"); 
+        })
+        });
+</script>
+
+
+<!-- Leave application sidebar function -->
+
+<script type="text/javascript">
+    $(document).ready(function(){
+        $("#apply_leave").click(function(event){
+            event.preventDefault(event);
+            $("#right_sidebar").load("apply_leave.php"); 
+        })
+        });
+</script>
+
+
+
+
 </head>
 <body>
 
@@ -89,20 +142,21 @@
       <div class="sidebar">
         <h3>Menu</h3>
         <ul>
-          <li><a href="user_dashboard.php">Dashboard</a></li>
-          <li><a href="update_task.php">Update Task</a></li>
-          <li><a href="apply_leave.php">Apply Leave</a></li>
-          <li><a href="leave_status.php">Leave Status</a></li>
-          <li><a href="logout.php">Logout</a></li>
+          <li><a href="user_dashboard.php" id="dashboard"   type="button" class="link">Dashboard</a></li>
+          <li><a href="task.php"  id="update_task"     type="button" class="link">Update Task</a></li>
+          <li><a href="apply_leave.php"  id="apply_leave"   type="button" class="link">Apply Leave</a></li>
+          <li><a href="leave_status.php"  id="leave_status"  type="button" class="link" >Leave Status</a></li>
+          <li><a href="./logout.php">Logout</a></li>
         </ul>
       </div>
     </div>
-    <div class="col-md-9">
+    <div class="col-md-9"   id="right_sidebar">
       <!-- Dashboard Content -->
-      <div class="dashboard-content">
+      <div class="dashboard-content" >
         <div class="card card-table">
           <!-- table content  -->
           <h2>Welcome to TaskVibe Dashboard</h2>
+
           
         </div>
       </div>

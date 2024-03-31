@@ -11,7 +11,7 @@
     <th>End Date</th>
     <th>Status</th>
     <th>Update</th></th>
-    <th>Delet</th>
+    <th>Delete</th>
 
 
 </tr>
