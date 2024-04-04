@@ -1,12 +1,17 @@
 <?php include_once ('includes/connection.php');?>
 <?php 
-SESSION_START()
-
+session_start();
 ?>
+
+
 <?php
 if(isset($_POST['userLogin'])){
+    echo "Email: " . $_POST['email'] . "<br>";
+    echo "Password: " . $_POST['password'] . "<br>";
     $query = "SELECT email, password, name, id FROM users WHERE email = '$_POST[email]' AND password ='$_POST[password]'";
+    echo "Query: " . $query . "<br>";
     $query_run = mysqli_query($connection, $query);
+    echo "Number of rows: " . mysqli_num_rows($query_run) . "<br>";
     if(mysqli_num_rows($query_run)){
 
         while($row = mysqli_fetch_assoc($query_run)){
@@ -14,11 +19,8 @@ if(isset($_POST['userLogin'])){
                 $_SESSION['name'] = $row['name'];
                 $_SESSION['id'] = $row['id'];
         }
-        
-
-        
         echo "<script type='text/javascript'>
-        alert('please enter correct details');
+        alert('logged in');
         window.location.href = 'user_dashboard.php';
         </script>";
     }
@@ -30,7 +32,8 @@ if(isset($_POST['userLogin'])){
     }
 }
 
-?> 
+?>
+
 
 
 

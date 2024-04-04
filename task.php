@@ -1,23 +1,15 @@
 <?php 
 session_start();
-?>
-<?php 
-include_once('./includes/connection.php');
+include_once('includes/connection.php');
 ?>
 <!DOCTYPE html>
-<html lang="en">
+<html>  
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Admin Dashboard</title>
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-  <link rel="stylesheet" href="../includes/styles.css">
+    <title>Assigned Tasks</title>
 </head>
-
 <body>
-    <center><h3>Your Tasks </h3></center><br>
-    <table class="table" style="background-color: whitesmoke; width: 75vw">
+    <center><h3>Assigned Tasks</h3></center>
+    <table class="table">
         <tr>
             <th>S.No</th>
             <th>Task ID</th>
@@ -29,28 +21,31 @@ include_once('./includes/connection.php');
             <th>Update</th>
             <th>Delete</th>
         </tr>
-
         <?php 
-        $query = "SELECT * FROM task WHERE id = '{$_SESSION['id']}'";
-        $_query_run = mysqli_query($connection, $query);
-        $sno = 0; // Initialize serial number counter
-        while ($row = mysqli_fetch_assoc($_query_run)) {
-            $sno++; // Increment serial number
-        ?>
-        <tr>
-            <td><?php echo $sno; ?></td>
-            <td><?php echo $row['id']; ?></td>
-            <td><?php echo $row['uid']; ?></td>
-            <td><?php echo $row['name']; ?></td>
-            <td><?php echo $row['description']; ?></td>
-            <td><?php echo $row['start_date']; ?></td>
-            <td><?php echo $row['end_date']; ?></td>
-            <td><?php echo $row['status']; ?></td>
-            <td><a href="#">Update</a></td>
-            <td><a href="#">Delete</a></td>
-        </tr>
-        <?php
+        $sno = 1;
+        $userId = $_SESSION['name'];
+        $query = "SELECT * FROM task WHERE name ='$userId'";
+        $query_run = mysqli_query($connection, $query);
+        if (mysqli_num_rows($query_run) > 0) {
+            while ($row = mysqli_fetch_assoc($query_run)) {
+                ?>
+                <tr>
+                    <td><?php echo $sno++; ?></td>
+                    <td><?php echo $row['id']; ?></td>
+                    <td><?php echo $row['uid']; ?></td>
+                    <td><?php echo $row['description']; ?></td>
+                    <td><?php echo $row['start_date']; ?></td>
+                    <td><?php echo $row['end_date']; ?></td>
+                    <td><?php echo $row['status']; ?></td>
+                    <td><a href="update_task.php?id=<?php echo $row['id']; ?>" class="btn btn-success">Update</a></td>
+                    <td><a href="delete_task.php?id=<?php echo $row['id']; ?>" class="btn btn-danger">Delete</a></td>
+                </tr>
+                <?php
+            }
+        } else {
+            echo '<tr><td colspan="9"><center>You have no tasks today</center></td></tr>';
         }
         ?>
     </table>
 </body>
+</html>

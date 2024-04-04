@@ -39,7 +39,7 @@
             <select class="form-control" id="assignedUser" name="assignedUser" required>
                 <?php
                 include_once('../includes/connection.php');
-                $query = "SELECT uid, name, email FROM users";
+                $query = "SELECT id, name, email FROM users";
                 $query_run = mysqli_query($connection, $query);
                 if (mysqli_num_rows($query_run)) {
                     while ($row = mysqli_fetch_assoc($query_run)) {
