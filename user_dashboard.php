@@ -129,6 +129,8 @@ include_once('./includes/connection.php');
 
 
 
+
+
 </head>
 <body>
 
@@ -155,6 +157,8 @@ include_once('./includes/connection.php');
           <li><a href="task.php"  id="update_task"     type="button" class="link">Update Task</a></li>
           <li><a href="apply_leave.php"  id="apply_leave"   type="button" class="link">Apply Leave</a></li>
           <li><a href="leave_status.php"  id="leave_status"  type="button" class="link" >Leave Status</a></li>
+          
+          
           <li><a href="./logout.php">Logout</a></li>
         </ul>
       </div>

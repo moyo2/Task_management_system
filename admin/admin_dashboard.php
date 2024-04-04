@@ -72,7 +72,23 @@ if(isset($_POST['create_task'])){
         })
     });
 </script>
+
+
+<!-- Register sidebar function -->
+
+<script type="text/javascript">
+    $(document).ready(function(){
+        $("#register").click(function(event){
+            event.preventDefault(event);
+            $("#right_sidebar").load("register.php"); 
+        })
+        });
+</script>
+
 </head>
+
+
+
 <body>
 <div class="container-fluid">
   <div class="row">
@@ -97,6 +113,7 @@ if(isset($_POST['create_task'])){
           <li><a href="create_task.php"  id="create_task"     type="button" class="link">Create Task</a></li>
           <li><a href="manage_task.php"  id="manage_task"   type="button" class="link">Manage Task</a></li>
           <li><a href="leave_application.php"  id="leave_application"  type="button" class="link" >Leave Applications</a></li>
+          <li><a href="register.php"  id="register"  type="button" class="link" >Register</a></li>
           <li><a href="../logout.php">Logout</a></li>
         </ul>
       </div>
