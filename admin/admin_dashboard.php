@@ -3,15 +3,20 @@ include_once('../includes/connection.php');
 include_once('../includes/header.php');
 
 if(isset($_POST['create_task'])){
+    // Sanitize input data
     $assignedUser = mysqli_real_escape_string($connection, $_POST['assignedUser']);
     $taskName = mysqli_real_escape_string($connection, $_POST['taskName']);
     $taskDescription = mysqli_real_escape_string($connection, $_POST['taskDescription']);
     $start_date = mysqli_real_escape_string($connection, $_POST['start_date']);
     $end_date = mysqli_real_escape_string($connection, $_POST['end_date']);
 
-    $query = "INSERT INTO task VALUES (null, '$taskName','$assignedUser', '$taskDescription', '$start_date', '$end_date','Not started '  )";
+    // Prepare query
+    $query = "INSERT INTO task VALUES (null, '$taskName','$assignedUser', '$taskDescription', '$start_date', '$end_date','Not started')";
+    
+    // Execute query
     $query_run = mysqli_query($connection, $query);
 
+    // Check if query execution was successful
     if($query_run){
         echo "<script type='text/javascript'>
         alert('Task created successfully');
@@ -28,27 +33,25 @@ if(isset($_POST['create_task'])){
 ?>
 
 <!-- jQuery code -->
-<!-- create task sidbar function -->
+<!-- create task sidebar function -->
 <script type="text/javascript">
     $(document).ready(function(){
         $("#create_task").click(function(event){
             event.preventDefault(event);
             $("#right_sidebar").load("create_task.php"); 
         })
-        });
+    });
 </script>
 
 <!-- manage task sidebar function -->
-
 <script type="text/javascript">
     $(document).ready(function(){
         $("#manage_task").click(function(event){
             event.preventDefault(event);
             $("#right_sidebar").load("manage_task.php"); 
         })
-        });
+    });
 </script>
-
 
 <!-- update task sidebar function -->
 <script type="text/javascript">
@@ -57,19 +60,17 @@ if(isset($_POST['create_task'])){
             event.preventDefault(event);
             $("#right_sidebar").load("edit_task.php"); 
         })
-        });
+    });
 </script>
 
-
 <!-- Leave application sidebar function -->
-
 <script type="text/javascript">
     $(document).ready(function(){
         $("#leave_application").click(function(event){
             event.preventDefault(event);
             $("#right_sidebar").load("leave_application.php"); 
         })
-        });
+    });
 </script>
 </head>
 <body>
@@ -95,7 +96,7 @@ if(isset($_POST['create_task'])){
           <li><a href="admin_dashboard.php" id="dashboard"   type="button" class="link">Dashboard</a></li>
           <li><a href="create_task.php"  id="create_task"     type="button" class="link">Create Task</a></li>
           <li><a href="manage_task.php"  id="manage_task"   type="button" class="link">Manage Task</a></li>
-          <li><a href="leave_application.php"  id="leave_application"  type="button" class="link" >Leave Applictions</a></li>
+          <li><a href="leave_application.php"  id="leave_application"  type="button" class="link" >Leave Applications</a></li>
           <li><a href="../logout.php">Logout</a></li>
         </ul>
       </div>
@@ -106,7 +107,6 @@ if(isset($_POST['create_task'])){
         <div class="card card-table">
           <!-- table content  -->
           <h2>Welcome to TaskVibe Dashboard</h2>
-
           
           <!-- <?php 
           // if(isset($_GET['update_msg'])){
@@ -116,17 +116,3 @@ if(isset($_POST['create_task'])){
 
       <?php 
           // if(isset($_GET['update_msg'])){
-          //   echo "<h6>".$_GET['update_msg']."</h6>";
-          // }
-          ?> -->
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-
-
-
-
-</body>
-</html>
